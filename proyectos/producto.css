@@ -1,0 +1,60 @@
+.proyect4{
+    background-color: rgb(209, 246, 255);
+    width: 100%;
+}
+button:hover{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+button{
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+    border: none;
+}
+.pequeñas .imagen{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+
+}
+
+
+.pequeñas .imagen.active {
+    border: 2px solid rgb(0, 47, 255);
+}
+
+
+
+.grande img{
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+
+.container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.imagen{
+    margin: 20px;
+}
+.descripcion{
+    margin: 20px;
+}
+@media(max-width: 768px){
+    .container2{
+        transform: scale(0.8);
+    }
+}

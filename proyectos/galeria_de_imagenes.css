@@ -1,0 +1,84 @@
+.proyect1 {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.7);
+}
+
+.gallery .image {
+    margin: 5px; /* Espaciado horizontal entre imágenes */
+    position: relative;
+    overflow: hidden;
+    width: 450px; /* Ancho inicial de la imagen */
+    display: flex;
+    justify-content: center;
+}
+
+.gallery .image img {
+    width: 100px; /* Cambia el valor del ancho a uno más pequeño */
+    height: 500px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.gallery img:hover {
+    transition: width 0.3s; /* Transición suave para el cambio de ancho */
+    cursor: pointer;
+    width: calc(450px + 300px); /* Aumenta el ancho en 300px al hacer hover */
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;   
+    font-size: 20px;
+}
+
+.gallery .image:hover figcaption {
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .proyect1 {
+        /* Cambios en los estilos para dispositivos móviles */
+        flex-direction: column;
+    }
+
+    .gallery {
+        /* Cambios en los estilos para dispositivos móviles */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery .image {
+        /* Cambios en los estilos para dispositivos móviles */
+        width: 100%; /* Ancho completo */
+        max-width: 300px; /* Ancho máximo */
+    }
+
+    .gallery img:hover {
+        /* Cambios en los estilos para dispositivos móviles */
+        width: 100%; /* Ancho completo */
+    }
+}

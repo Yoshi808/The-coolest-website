@@ -1,0 +1,103 @@
+.tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgb(80, 80, 80), rgb(207, 207, 207));
+    margin-top: 70px; /* Ajusta el margen superior según sea necesario */
+}
+.card{
+    width: 400px;
+    height: 530px;
+    perspective: 1000px;
+}
+
+.frente{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(34, 34, 34);
+    backface-visibility: hidden;
+    transition: 1.2s;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: baseline;
+    margin: 30px;
+}
+.estadistica{
+    display: flex;
+    flex-direction: row;
+}
+.valor h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid black;
+    padding: 30px;
+}
+.estadistica :last-child h1{
+    border-right: none;
+    padding: none;
+}
+.valor p{
+    margin: 20px;
+}
+.profile{
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+}
+button:hover{
+    cursor: pointer;
+}
+button{
+    border-radius: 20px;
+    border: none;
+    box-shadow: 3px 3px 7px black;
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: rgb(150, 0 , 255);
+}
+.dorso{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px rgb(34, 34, 34);
+    display: flex;
+    background-image: url("images/Imagen\ de\ WhatsApp\ 2023-08-29\ a\ las\ 20.55.47.jpg");
+    background-size: 100% 100%;
+    backface-visibility: hidden;
+    transition: 1.2s;
+    
+}
+.content2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 30px;
+}
+
+.dorso{
+    transform: rotateY(180deg);
+}
+.card:hover .frente{
+    transform: rotateY(180deg);
+}
+.card:hover .dorso{
+    transform: rotateY(0deg);
+}
+
+.card h1{
+    font-family: 'Courier New', Courier, monospace;
+}
+.card p{
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -1,0 +1,32 @@
+.proyect2{
+    background-color: aquamarine;
+    width: 100%;
+}
+.tarjetas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+}
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgba(0, 0, 0, 0.329) ;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.527);
+    background-color: white;
+}
+.tarjeta :nth-child(2){
+    margin: 10px;
+}
+.tarjeta :nth-child(3){
+    margin: 10px;
+}
+
+@media(max-width: 768px){
+    .tarjetas{
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        transform: scale(0.7);
+    }
+}

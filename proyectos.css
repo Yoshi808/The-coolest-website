@@ -1,0 +1,17 @@
+main h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#proyect{
+    margin: 30px;
+}
+main #proyect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
