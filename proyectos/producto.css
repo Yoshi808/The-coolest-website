@@ -57,6 +57,6 @@ button{
 }
 @media(max-width: 768px){
     .container2{
-        transform: scale(0.6);
+        transform: scale(0.5);
     }
 }
