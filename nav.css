@@ -5,6 +5,7 @@
     background-color: black;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
   
   
@@ -46,6 +47,7 @@ a {
 .button-menu-toggle {
     display: none;
     color: black;
+    margin: 5px;
 }
 
 .navbar :hover{
