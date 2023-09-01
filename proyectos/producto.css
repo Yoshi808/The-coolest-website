@@ -60,3 +60,8 @@ button{
         transform: scale(0.5);
     }
 }
+@media(max-width: 400px){
+    .container2{
+        transform: scale(0.3);
+    }
+}
