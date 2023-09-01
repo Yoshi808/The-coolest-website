@@ -48,6 +48,8 @@ a {
     display: none;
     color: black;
     margin: 5px;
+    width: 95%;
+    height: 30px;
 }
 
 .navbar :hover{
