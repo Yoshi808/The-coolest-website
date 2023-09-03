@@ -103,8 +103,16 @@
             <div class="descripcion">
                 <h1>Edición Limitada de Zapatillas</h1>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Magni aspernatur laborum alias beatae quibusdam a impedit.  <br>Autem accusantium iusto libero aliquam consequuntur. <br>Quas error laudantium, officiis inventore molestiae ut hic!</p>
-                <h1>$ 12.000</h1>
-                <button type="submit" onclick="showAlert('Producto añadido correctamente')">Añadir al Carrito</button>
+                <h1 class="precio" data-precio="$ 12.00">$ 12.00</h1>
+                <div class="botones">
+                    <div class="cantidad">
+                        <button id="incrementar">+</button>
+                        <input id="cantidad" value="1" min="1" max="10">
+                        <button id="decrementar">-</button>
+                    </div>
+                    <button type="submit" onclick="showAlert('Producto añadido correctamente')">Añadir al Carrito</button>
+                </div>
+                
             </div>
         </div>
         </div>
@@ -131,6 +139,61 @@
         var imagenGrande = document.querySelector('.imagen-grande');
         imagenGrande.src = imagenSrc;
         }
+
+                //Cantidad de productos
+        
+        
+        // Obtén referencias a los elementos de los botones y el input de cantidad
+        const incrementarButton = document.getElementById("incrementar");
+        const decrementarButton = document.getElementById("decrementar");
+        const cantidadInput = document.getElementById("cantidad");
+        const precioElement = document.querySelector(".precio");
+
+        // Obtén el precio unitario del atributo data-precio
+        const precioUnitario = parseFloat(precioElement.getAttribute("data-precio").replace("$ ", "").replace(",", ""));
+
+        // Función para actualizar el precio total
+        function actualizarPrecioTotal() {
+            // Obtén el valor actual del input como un número
+            let cantidad = parseInt(cantidadInput.value);
+
+            // Verifica si la cantidad está dentro del rango permitido
+            if (cantidad > parseInt(cantidadInput.max)) {
+                cantidad = parseInt(cantidadInput.max);
+                cantidadInput.value = cantidad; // Ajusta el valor si es mayor al máximo
+            }
+
+            // Calcula el precio total solo si la cantidad es un número válido
+            const precioTotal = cantidad * precioUnitario;
+
+            // Formatea el precio total y actualiza el texto de la etiqueta de precio
+            precioElement.textContent = "$ " + precioTotal.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+        }
+
+        // Agrega event listeners para los botones de incrementar y decrementar
+        incrementarButton.addEventListener("click", function () {
+            cantidadInput.value = parseInt(cantidadInput.value) + 1;
+            actualizarPrecioTotal();
+        });
+
+        decrementarButton.addEventListener("click", function () {
+            if (parseInt(cantidadInput.value) > 1) {
+                cantidadInput.value = parseInt(cantidadInput.value) - 1;
+                actualizarPrecioTotal();
+            }
+        });
+
+        // Agrega un event listener para el cambio en el input de cantidad
+        cantidadInput.addEventListener("input", function () {
+            actualizarPrecioTotal();
+        });
+
+        // Llama a la función para inicializar el precio total
+        actualizarPrecioTotal();
+
+
+
+
 
     </script>
 </html>

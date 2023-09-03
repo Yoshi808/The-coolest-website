@@ -1,3 +1,10 @@
 function showAlert(message) {
-    alert(message);
+    if (parseInt(cantidadInput.value) > 0) {
+        alert(message);
+    } else{
+        alert('Error al añadir el producto');
+        cantidadInput.value = cantidadInput.min;
+        actualizarPrecioTotal();
+    }
 }
+    
