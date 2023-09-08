@@ -45,15 +45,19 @@ button{
     background-color: white;
     border-radius: 20px;
     margin: 20px;
-    width: auto;
-    height: auto;
+    width: 97%;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
+
 .imagen{
-    margin: 20px;
+    margin: auto;
+    width: auto;
+    height: auto;
 }
 .descripcion{
-    margin: 20px;
+    margin: auto;
+    width: auto;
+    height: auto;
 }
 
 .cantidad{
@@ -98,11 +102,21 @@ button{
 
 @media(max-width: 768px){
     .container2{
+        width: 90%;
+    }
+    .container2 > *{
+        transform: scale(0.5);
+        width: 40%;
+    }
+    .grande{
         transform: scale(0.5);
     }
 }
-@media(max-width: 400px){
-    .container2{
+@media(max-width: 300px){
+    .container2 > *{
         transform: scale(0.3);
+    }
+    .container2{
+        transform: scale(0.7);
     }
 }
