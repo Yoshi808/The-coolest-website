@@ -13,14 +13,41 @@ function calcularEdad(fechaNacimiento) {
     return anios;
 }
 
+function esFechaValida(fecha) {
+    const partes = fecha.split("-");
+    const anio = parseInt(partes[0]);
+    const mes = parseInt(partes[1]);
+    const dia = parseInt(partes[2]);
+
+    if (
+        isNaN(anio) ||
+        isNaN(mes) ||
+        isNaN(dia) ||
+        mes < 1 ||
+        mes > 12 ||
+        dia < 1 ||
+        dia > new Date(anio, mes, 0).getDate()
+    ) {
+        return false;
+    }
+    return true;
+}
+function validarNombre(nombre) {
+    // Verificar si el nombre contiene solo letras (con tildes), la letra "ñ" y espacios
+    if (/^[A-Za-záéíóúÁÉÍÓÚñÑçÇýÝ\s]+$/.test(nombre)) {
+        return true;
+    }
+    return false;
+}
+
 function hablar() {
     // Solicitar al usuario que ingrese su nombre
     let nombre = prompt("Ingrese su nombre");
     let mensaje2 = document.getElementById("mensaje2");
 
-    // Verificar si el nombre contiene letras (con tildes), la letra "ñ" y espacios
-    if (!/^[\w\sáéíóúÁÉÍÓÚñÑçÇýÝ]+$/.test(nombre)) {
-        alert('El nombre no puede contener símbolos ni números. Por favor ingrese un nombre válido.');
+    // Verificar si el nombre es válido
+    if (!validarNombre(nombre)) {
+        alert('El nombre no puede contener números ni símbolos. Por favor ingrese un nombre válido.');
         hablar(); // Llamar recursivamente si no es un nombre válido
         return; // Salir de la función para evitar que continúe
     }
@@ -42,17 +69,12 @@ function hablar() {
         // Verificar si la fecha de nacimiento es un formato válido
         if (!/^\d{4}-\d{2}-\d{2}$/.test(fechaNacimiento)) {
             alert('Por favor ingrese una fecha de nacimiento válida en el formato AAAA-MM-DD.');
+        } else if (!esFechaValida(fechaNacimiento)) {
+            alert('La fecha de nacimiento ingresada no es válida. Por favor, inténtelo nuevamente.');
+        } else if (new Date(fechaNacimiento) < fechamin) {
+            alert('La fecha de nacimiento no puede ser menor que ' + fechamin.getFullYear() + '.');
         } else {
-            let nacimiento = new Date(fechaNacimiento);
-
-            // Verificar si la fecha de nacimiento es mayor que la fecha actual
-            if (nacimiento > fechaActual) {
-                alert('La fecha de nacimiento no puede ser mayor que la fecha actual.');
-            } else if (nacimiento < fechamin) {
-                alert('Ingrese una fecha de nacimiento válida (' + fechamin.getFullYear() + '-' + fechaActual.getFullYear() + ").");
-            } else {
-                break; // Salir del bucle si la fecha es válida
-            }
+            break; // Salir del bucle si la fecha es válida
         }
     }
 
