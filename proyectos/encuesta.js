@@ -10,8 +10,9 @@ function hablar () {
     // Obtén la referencia al elemento <h3> con el id "mensaje3"
     var nacimiento = prompt("Ingrese su año de nacimiento");
     let mensaje3 = document.getElementById("mensaje3");
-
-    var edad = 2023 - nacimiento
+    //Año actual
+    var anioActual = new Date().getFullYear();
+    var edad = anioActual - nacimiento
     
     // Cambia el contenido del elemento <h3>
     mensaje3.textContent = "Tienes " + edad + "  años";
