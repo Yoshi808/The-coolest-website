@@ -73,6 +73,8 @@ function hablar() {
             alert('La fecha de nacimiento ingresada no es válida. Por favor, inténtelo nuevamente.');
         } else if (new Date(fechaNacimiento) < fechamin) {
             alert('La fecha de nacimiento no puede ser menor que ' + fechamin.getFullYear() + '.');
+        } else if (new Date(fechaNacimiento) > fechaActual) {
+            alert('La fecha de nacimiento no puede ser mayor que la actual.');
         } else {
             break; // Salir del bucle si la fecha es válida
         }
