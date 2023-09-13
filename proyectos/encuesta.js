@@ -43,6 +43,15 @@ function validarNombre(nombre) {
 function hablar() {
     // Solicitar al usuario que ingrese su nombre
     let nombre = prompt("Ingrese su nombre");
+    
+    let nombreSplit = nombre.split(' ');
+
+    for (let i = 0; i < nombreSplit.length; i++) {
+        nombreSplit[i] = nombreSplit[i].charAt(0).toUpperCase() + nombreSplit[i].slice(1).toLowerCase();
+    }
+    
+    let nombreMayuscula = nombreSplit.join(' ');
+
     let mensaje2 = document.getElementById("mensaje2");
 
     // Verificar si el nombre es válido
@@ -53,7 +62,7 @@ function hablar() {
     }
 
     // Cambiar el contenido del elemento <h2>
-    mensaje2.textContent = "¡Hola " + nombre + "!";
+    mensaje2.textContent = "¡Hola " + nombreMayuscula + "!";
 
     // Solicitar al usuario que ingrese su fecha de nacimiento
     let mensaje3 = document.getElementById("mensaje3");

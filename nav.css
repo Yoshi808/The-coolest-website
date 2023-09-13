@@ -1,3 +1,8 @@
+header{
+    display: flex;
+    flex-direction: column;
+}
+
 .container-nav {
     display: flex;
     padding: 10px;
@@ -92,4 +97,16 @@ a {
         background-color: rgba(20,20,20,0.95);
     }
     
+}
+
+
+
+#imageSound:hover{
+    cursor: pointer;
+}
+/* Por defecto, ocultar el elemento de audio */
+#audio {
+    display: none;
+    width: 100%;
+    background-color: white;
 }
