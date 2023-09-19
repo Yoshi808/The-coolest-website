@@ -100,23 +100,80 @@ button{
     color: black;
 }
 
+
+
+
+
+
+
+/*Slider*/
+.slider-container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    width: 1000px;
+    height: 1000px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+.slider .container2 {
+    width: 80%;
+    margin: 30px;
+    height: 90%;
+    object-fit: cover;
+}
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border-radius: 100%;
+    border: solid rgb(0, 0, 0) 1px;
+    color: black;
+    font-size: 50px;
+    width: 60px;
+    cursor: pointer;
+}
+.slider-prev {
+    left: 1%;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.281);
+}
+.slider-next {
+    right: 1%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.281);
+}
 @media(max-width: 768px){
-    .container2{
-        width: 90%;
-    }
-    .container2 > *{
+    .slider > *{
         transform: scale(0.5);
-        width: 40%;
     }
     .grande{
         transform: scale(0.5);
     }
+    .slider-prev{
+        left: 20%;
+    }
+    .slider-next{
+        right: 20%;
+    }
 }
 @media(max-width: 300px){
-    .container2 > *{
+    .slider > *{
         transform: scale(0.3);
     }
-    .container2{
+    .slider{
         transform: scale(0.7);
+    }
+    .slider-prev{
+        left: 30%;
+    }
+    .slider-next{
+        right: 30%;
     }
 }
