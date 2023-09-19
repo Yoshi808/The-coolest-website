@@ -1,5 +1,8 @@
 .proyect4{
     background-color: rgb(209, 246, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
     width: 100%;
 }
 button:hover{
@@ -109,8 +112,7 @@ button{
 /*Slider*/
 .slider-container {
     position: relative;
-    width: 50%;
-    margin: 0 auto;
+    width: 25%;
     width: 1000px;
     height: 1000px;
     overflow: hidden;
@@ -151,21 +153,27 @@ button{
 }
 @media(max-width: 768px){
     .slider > *{
+        transform: scale(0.7);
+    }
+    .slider-container{
         transform: scale(0.5);
     }
     .grande{
         transform: scale(0.5);
     }
     .slider-prev{
-        left: 20%;
+        left: 10%;
     }
     .slider-next{
-        right: 20%;
+        right: 10%;
     }
 }
-@media(max-width: 300px){
+@media(max-width: 500px){
     .slider > *{
         transform: scale(0.3);
+    }
+    .slider-container{
+        transform: scale(0.7);
     }
     .slider{
         transform: scale(0.7);
